@@ -358,4 +358,10 @@ export default {
 	height: 100%;
 }
 
+// FIXME: update the use color in NcAvatar
+// TOREMOVE: when fixed in @nextcloud/vue
+:deep(.avatar-class-icon) {
+	background-color: initial;
+}
+
 </style>
