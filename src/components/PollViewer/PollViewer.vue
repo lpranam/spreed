@@ -18,7 +18,7 @@
 					<template #icon>
 						<IconCircle :size="10" />
 					</template>
-					{{ poll?.status === POLL.STATUS.OPEN ? t('spreed', 'Open poll') : t('spreed', 'Closed poll') }}
+					{{ isPollOpen ? t('spreed', 'Open poll') : t('spreed', 'Closed poll') }}
 				</NcChip>
 			</div>
 			<div class="poll-modal__header">
@@ -331,7 +331,7 @@ export default {
 		},
 
 		pollImportance() {
-			if (this.poll.status === POLL.STATUS.OPEN) {
+			if (this.isPollOpen) {
 				return this.poll?.votedSelf.length > 0 ? 'secondary' : 'primary'
 			} else {
 				return 'tertiary'
